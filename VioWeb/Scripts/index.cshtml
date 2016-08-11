@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app="app" ng-strict-di>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=11,chrome=1">
+	<meta name="viewport" content="width=1024">
+	<title ng-bind="title"></title>
+	<base href="@Href("~/")">
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- End Favicon -->
+	<link rel="stylesheet" href="" />
+</head>
+<body>
+	<!-- Body -->
+	<div class="body" ui-view>
+		<div class="body-splash">
+			Loading
+		</div>
+	</div>
+	<!-- End Body -->
+	<!-- Scripts -->
+	<script type="text/javascript" src="dist/lib.min.js"></script>
+	<script type="text/javascript" src="dist/all.min.js"></script>
+	<!-- End Scripts -->
+</body>
+</html>

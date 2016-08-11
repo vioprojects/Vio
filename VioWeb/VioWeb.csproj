@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -193,6 +195,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Routing\DefaultRoute.cs" />
+    <Compile Include="App_Start\Routing\DefaultRouteHandler.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -206,6 +210,13 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="gulpfile.js" />
+    <Content Include="Scripts\gulp\config.js" />
+    <Content Include="Scripts\gulp\tasks\common.js" />
+    <Content Include="Scripts\gulp\tasks\libraries.js" />
+    <Content Include="Scripts\gulp\tasks\live.js" />
+    <Content Include="Scripts\gulp\tasks\style.js" />
+    <Content Include="Scripts\gulp\tasks\typescript.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -216,17 +227,64 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\" />
+    <Folder Include="dist\" />
+    <Folder Include="Scripts\app\home\directives\" />
+    <Folder Include="Scripts\app\home\services\" />
+    <Folder Include="Scripts\content\fonts\" />
+    <Folder Include="Scripts\content\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="bower.json" />
+    <Content Include="package.json" />
     <None Include="Project_Readme.html" />
+    <Content Include="Scripts\content\styles\_variable.scss" />
+    <Content Include="Scripts\content\styles\common\home.scss" />
+    <Content Include="Scripts\index.cshtml" />
+    <Content Include="Scripts\content\resources\lang.en-us.json" />
+    <Content Include="Scripts\content\resources\lang.vi-vn.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\app\common\app.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\components.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\controllers.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\controllers\Body.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\controllers\BodyController.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\directives.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\filters.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\filters\RioTranslate.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\services.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\services\RioApp.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\translate.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\_refer.ts" />
+    <TypeScriptCompile Include="Scripts\app\home\components\HomeBody.ts" />
+    <TypeScriptCompile Include="Scripts\app\home\components\HomeDetailBody.ts" />
+    <TypeScriptCompile Include="Scripts\app\home\HomeRoute.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-local-storage\angular-local-storage.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-translate\angular-translate.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-ui\angular-ui-router.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-ui\angular-ui-sortable.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-resource.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-route.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-sanitize.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery.cookie\jquery.cookie.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\vio\vio.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
