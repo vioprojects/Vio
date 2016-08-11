@@ -1,0 +1,35 @@
+# VS2015
+.vs
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
+
+# NuGet Packages Directory
+packages/
+
+# Windows Store app package directory
+AppPackages/
+
+# Node modules
+node_modules/
+
+# Bower modules
+bower_components/
+
+# Javascript & CSS combined file
+VioWeb/dist
+
+# Javascript Map files
+*.js.map
+*.css.map
+VioWeb/Scripts/app/**/*.js
