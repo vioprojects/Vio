@@ -44,5 +44,9 @@
 				path: 'dist',
 				filename: 'lib.min.js'
 		}
-	}
+	},
+	assets: {
+		srcDirectory: 'Scripts/content/',
+		dist: '../content/'
+	},
 }

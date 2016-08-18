@@ -5,7 +5,7 @@ module Vio.Components {
 
 	Vio.Components.addComponent("homeDetailBody", {
 		template: `
-<div>
+<div class="home-content">
 aaaaaaaaaaaaaaaaaaaaaaaaaaaa1: {{ $ctrl.testString }}
 translate: {{ ::('APP.COMMON.MENU.HOME' | rioTranslate) }}
 </div>
