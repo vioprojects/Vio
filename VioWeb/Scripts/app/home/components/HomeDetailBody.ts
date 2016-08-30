@@ -5,10 +5,22 @@ module Vio.Components {
 
 	Vio.Components.addComponent("homeDetailBody", {
 		template: `
-<div class="home-content">
-aaaaaaaaaaaaaaaaaaaaaaaaaaaa1: {{ $ctrl.testString }}
-translate: {{ ::('APP.COMMON.MENU.HOME' | rioTranslate) }}
-</div>
+<vio-page>
+	<div name="page-header">
+		<div class="home-content">
+			aaaaaaaaaaaaaaaaaaaaaaaaaaaa1: {{ $ctrl.testString }}
+			translate: {{ ::('APP.COMMON.MENU.HOME' | rioTranslate) }}
+		</div>
+	</div>
+	<div name="page-main">
+		<div class="home-content">
+		</div>
+	</div>
+	<div name="page-footer">
+		<div class="home-content">
+		</div>
+	</div>
+</vio-page>
 `		,
 		bindings: {
 		},

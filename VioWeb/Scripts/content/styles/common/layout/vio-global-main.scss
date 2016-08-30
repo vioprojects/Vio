@@ -1,0 +1,13 @@
+﻿@charset "utf-8";
+
+@import "../../share";
+
+$c_name: 'global_main';
+$c: '.' + $c_name;
+$c_pre: $c_name + '-';
+
+#{$c}-c {
+	padding-top: 0;
+	background: $color-black;
+}
+

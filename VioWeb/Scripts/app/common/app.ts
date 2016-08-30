@@ -10,7 +10,8 @@ var app = angular.module('app', [
 	'app.filters',
 	'ui.router',
 	'app.i18n',
-	'pascalprecht.translate'
+	'pascalprecht.translate'//,
+	//'multi-transclude'
 ]);
 
 app.config(['$compileProvider', '$locationProvider', ($compileProvider: angular.ICompileProvider, $locationProvider: angular.ILocationProvider) => {
