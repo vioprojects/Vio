@@ -244,6 +244,8 @@
     <Content Include="Scripts\index.cshtml" />
     <Content Include="Scripts\content\resources\lang.en-us.json" />
     <Content Include="Scripts\content\resources\lang.vi-vn.json" />
+    <Content Include="Scripts\content\styles\common\layout\vio-global-main.scss" />
+    <Content Include="Scripts\content\styles\_share.scss" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app\common\app.ts" />
@@ -252,6 +254,7 @@
     <TypeScriptCompile Include="Scripts\app\common\controllers\Body.ts" />
     <TypeScriptCompile Include="Scripts\app\common\controllers\BodyController.ts" />
     <TypeScriptCompile Include="Scripts\app\common\directives.ts" />
+    <TypeScriptCompile Include="Scripts\app\common\directives\VioPage.ts" />
     <TypeScriptCompile Include="Scripts\app\common\filters.ts" />
     <TypeScriptCompile Include="Scripts\app\common\filters\RioTranslate.ts" />
     <TypeScriptCompile Include="Scripts\app\common\services.ts" />
