@@ -40,6 +40,7 @@
 		// bower paths
 		bowerDirectory: "bower_components/",
 		bowerJson: "bower.json",
+		src: "Scripts/typings/vio/**/*.js",
 		output: {
 				path: 'dist',
 				filename: 'lib.min.js'

@@ -218,6 +218,7 @@
     <Content Include="Scripts\gulp\tasks\style.js" />
     <Content Include="Scripts\gulp\tasks\typescript.js" />
     <Content Include="Scripts\gulp\util.js" />
+    <Content Include="Scripts\typings\vio\multi-transclude-custom.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

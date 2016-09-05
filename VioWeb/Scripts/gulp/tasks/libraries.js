@@ -19,6 +19,7 @@ gulp.task('build:libraries', function (cb) {
 				bowerJson: config.libraries.bowerJson
 			}
 		}))
+		.pipe(add.append(config.libraries.src))
 		.pipe(concat(config.libraries.output.filename, { newLine: ';\n' }))
 		.pipe(gulp.dest(config.libraries.output.path));
 })
