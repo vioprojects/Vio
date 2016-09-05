@@ -1,0 +1,17 @@
+﻿@charset "utf-8";
+
+@import "../../share";
+
+/*----------------------------------------
+	reset
+----------------------------------------*/
+@include reset;
+
+body {
+	overflow: hidden;
+	overflow-y: scroll;
+	position: relative;
+	min-width: $width-main;
+	min-height: 100%;
+	background: $color-gray;
+}

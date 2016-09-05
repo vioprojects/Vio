@@ -8,16 +8,17 @@ module Vio.Components {
 <vio-page>
 	<div name="page-header">
 		<div class="home-content">
-			aaaaaaaaaaaaaaaaaaaaaaaaaaaa1: {{ $ctrl.testString }}
-			translate: {{ ::('APP.COMMON.MENU.HOME' | rioTranslate) }}
+			This is header: {{ ::('APP.COMMON.MENU.HOME' | rioTranslate) }}
 		</div>
 	</div>
-	<div name="page-main">
-		<div class="home-content">
+	<div name="page-content">
+		<div>
+			This is content
 		</div>
 	</div>
 	<div name="page-footer">
-		<div class="home-content">
+		<div>
+			This is footer
 		</div>
 	</div>
 </vio-page>

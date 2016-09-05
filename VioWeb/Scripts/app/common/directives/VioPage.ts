@@ -19,15 +19,15 @@ module Vio.Directives {
 		public template = `
 <div class="page-c" ng-multi-transclude-controller="parent">
 	<div class="page-header" ng-multi-transclude="page-header">
-		<!-- Page Main -->
+		<!-- Page Header -->
 	</div>
 
-	<div class="page-main" ng-multi-transclude="page-main">
-		<!-- Page Main -->
+	<div class="page-content" ng-multi-transclude="page-content">
+		<!-- Page Content -->
 	</div>
 
 	<div class="page-footer" ng-multi-transclude="page-footer">
-		<!-- Page Overall -->
+		<!-- Page Footer -->
 	</div>
 </div>
 		`;

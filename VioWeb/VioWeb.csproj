@@ -247,6 +247,11 @@
     <Content Include="Scripts\content\resources\lang.vi-vn.json" />
     <Content Include="Scripts\content\styles\common\layout\vio-global-main.scss" />
     <Content Include="Scripts\content\styles\_share.scss" />
+    <Content Include="Scripts\content\styles\mixins\_layout.scss" />
+    <Content Include="Scripts\content\styles\_mixin.scss" />
+    <Content Include="Scripts\content\styles\common\layout\vio-layout.scss" />
+    <Content Include="Scripts\content\styles\mixins\_reset.scss" />
+    <Content Include="Scripts\content\styles\common\layout\vio-style.scss" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app\common\app.ts" />

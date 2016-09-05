@@ -1,0 +1,5 @@
+﻿@charset "utf-8";
+
+@mixin reset {
+	html{-webkit-text-size-adjust:100%;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}address,caption,cite,code,dfn,strong,th,var{font-style:normal;}table{border-collapse:collapse;border-spacing:0;}caption,th{text-align:left;}q:before,q:after{content:'';}object,embed{vertical-align:top;}h1,h2,h3,h4,h5,h6,small,th{font-weight:normal;font-size:100%;}img,abbr,acronym,fieldset{border:0;}ul,ol{list-style-type:none;}a,label{cursor:pointer;}a[href^="#"]{outline:none;}img{vertical-align:top;margin:0;padding:0;}
+}
